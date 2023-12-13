@@ -23,7 +23,7 @@ function Hero() {
                         <div className="flex flex-col items-center justify-center pt-5">
                             <div className="flex flex-row gap-2 items-center justify-center">
                                 <input type="text" placeholder="Enter your email address" className="bg-[#060C18] w-[400px] px-14 py-3 rounded-md border border-zinc-400 text-white" />
-                                <button className=" transition duration-200 hover:bg-[#A471FA] bg-white hover:text-white text-black px-7 py-3 rounded-md">Get Started</button>
+                                <button className=" transition duration-200 hover:bg-sky-500 bg-white hover:text-white text-black px-7 py-3 rounded-md">Get Started</button>
                             </div>
                         </div>
                     </div>

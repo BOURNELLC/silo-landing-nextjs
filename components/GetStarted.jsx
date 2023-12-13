@@ -21,25 +21,25 @@ function GetStarted() {
                         Step 1
                     </h3>
                     <p className='text-center'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                        Provide your name, email address to get started for free.
                     </p>
                 </div>
                 <div className='flex flex-col items-center justify-center w-1/3 border-r border-gray-800 p-7'>
-                    <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-2926993-2441074.png?f=webp" alt="" className='h-[250px]' />
                     <h3 className='text-2xl font-semibold py-7'>
-                        Step 1
+                        Step 2
                     </h3>
                     <p className='text-center'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                        Start storing and enjoy upto 20GB of free private cloud storage on us.
                     </p>
                 </div>
                 <div className='flex flex-col items-center justify-center w-1/3 p-7'>
-                    <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
+                    <img src="https://cdn-icons-png.flaticon.com/512/5387/5387743.png" alt="" className='h-[250px]' />
                     <h3 className='text-2xl font-semibold py-7'>
-                        Step 1
+                        Step 3
                     </h3>
                     <p className='text-center'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                        Upgrade to unlimited for access to unlimited storage space and pay for only what you use.
                     </p>
                 </div>
             </div>

@@ -15,9 +15,9 @@ function WorkWithSilo() {
                     </div>
                 </div>
 
-                <div className='flex justify-between border-b border-gray-800 w-full py-20'>
+                <div className='flex items-center justify-between border-b border-gray-800 w-full py-20'>
                     <div className='w-2/3 flex justify-center'>
-                        <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
+                        <img src="https://cdn-icons-png.flaticon.com/512/2534/2534647.png" alt="" className='h-[250px]' />
                     </div>
                     <div className='w-1/3 px-7'>
                         <h3 className='text-3xl font-bold py-7'>
@@ -32,9 +32,9 @@ function WorkWithSilo() {
                     </div>
 
                 </div>
-                <div className='flex justify-between border-b border-gray-800 w-full py-20'>
+                <div className='flex items-center justify-between border-b border-gray-800 w-full py-20'>
                     <div className='w-2/3 flex justify-center'>
-                        <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
+                        <img src="https://cdn-icons-png.flaticon.com/512/5663/5663360.png" alt="" className='h-[250px]' />
                     </div>
                     <div className='w-1/3 px-7'>
                         <h3 className='text-3xl font-bold py-7'>
@@ -49,9 +49,9 @@ function WorkWithSilo() {
                     </div>
 
                 </div>
-                <div className='flex justify-between w-full py-20'>
+                <div className='flex items-center justify-between w-full py-20'>
                     <div className='w-2/3 flex justify-center'>
-                        <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
+                        <img src="https://cdn-icons-png.flaticon.com/512/912/912214.png" alt="" className='h-[250px]' />
                     </div>
                     <div className='w-1/3 px-7'>
                         <h3 className='text-3xl font-bold py-7'>
