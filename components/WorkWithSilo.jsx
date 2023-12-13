@@ -4,8 +4,8 @@ function WorkWithSilo() {
     return (
         <div>
             <div>
-                <div className="flex items-center justify-between border-t border-b border-gray-800 py-10">
-                    <h3 className='text-3xl font-semibold'>
+                <div className="flex items-center justify-between border-t border-b border-gray-800 py-10 px-5 2xl:px-0">
+                    <h3 className='text-2xl lg:text-3xl font-semibold'>
                         Work with Silo
                     </h3>
                     <div>
@@ -15,12 +15,12 @@ function WorkWithSilo() {
                     </div>
                 </div>
 
-                <div className='flex items-center justify-between border-b border-gray-800 w-full py-20'>
-                    <div className='w-2/3 flex justify-center'>
+                <div className='flex flex-col lg:flex-row items-center justify-between border-b border-gray-800 w-full py-20'>
+                    <div className='w-full lg:w-2/3 flex justify-center'>
                         <img src="https://cdn-icons-png.flaticon.com/512/2534/2534647.png" alt="" className='h-[250px]' />
                     </div>
-                    <div className='w-1/3 px-7'>
-                        <h3 className='text-3xl font-bold py-7'>
+                    <div className='w-full lg:w-1/3 px-7'>
+                        <h3 className='text-2xl lg:text-3xl font-bold py-7'>
                             As a sales <br className='hidden lg:block' /> representative
                         </h3>
                         <p className='pr-5 text-gray-300'>
@@ -32,12 +32,12 @@ function WorkWithSilo() {
                     </div>
 
                 </div>
-                <div className='flex items-center justify-between border-b border-gray-800 w-full py-20'>
-                    <div className='w-2/3 flex justify-center'>
+                <div className='flex flex-col lg:flex-row items-center justify-between border-b border-gray-800 w-full py-20'>
+                    <div className='w-full lg:w-2/3 flex justify-center'>
                         <img src="https://cdn-icons-png.flaticon.com/512/5663/5663360.png" alt="" className='h-[250px]' />
                     </div>
-                    <div className='w-1/3 px-7'>
-                        <h3 className='text-3xl font-bold py-7'>
+                    <div className='w-full lg:w-1/3 px-7'>
+                        <h3 className='text-2xl lg:text-3xl font-bold py-7'>
                             As a partner
                         </h3>
                         <p className='pr-5 text-gray-300'>
@@ -49,12 +49,12 @@ function WorkWithSilo() {
                     </div>
 
                 </div>
-                <div className='flex items-center justify-between w-full py-20'>
-                    <div className='w-2/3 flex justify-center'>
+                <div className='flex flex-col lg:flex-row items-center justify-between w-full py-20'>
+                    <div className='w-full lg:w-2/3 flex justify-center'>
                         <img src="https://cdn-icons-png.flaticon.com/512/912/912214.png" alt="" className='h-[250px]' />
                     </div>
-                    <div className='w-1/3 px-7'>
-                        <h3 className='text-3xl font-bold py-7'>
+                    <div className='w-full lg:w-1/3 px-7'>
+                        <h3 className='text-2xl lg:text-3xl font-bold py-7'>
                             As a an employee
                         </h3>
                         <p className='pr-5 text-gray-300'>

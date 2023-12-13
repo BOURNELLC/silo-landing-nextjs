@@ -3,8 +3,8 @@ import React from 'react'
 function GetStarted() {
     return (
         <div>
-            <div className="flex items-center justify-between border-t border-b border-gray-800 py-10">
-                <h3 className='text-3xl font-semibold'>
+            <div className="flex items-center justify-between border-t border-b border-gray-800 py-10 px-5 2xl:px-0">
+                <h3 className='text-2xl lg:text-3xl font-semibold'>
                     Get Started
                 </h3>
                 <div>
@@ -14,8 +14,8 @@ function GetStarted() {
                 </div>
             </div>
 
-            <div className='flex border-b border-gray-800'>
-                <div className='flex flex-col items-center justify-center w-1/3 border-r border-gray-800 px-7 py-10'>
+            <div className='flex flex-col lg:flex-row border-b border-gray-800'>
+                <div className='flex flex-col items-center justify-center w-full lg:w-1/3 border-r border-gray-800 px-7 py-10'>
                     <img src="https://www.iconpacks.net/icons/1/free-mail-icon-1008-thumb.png" alt="" className='h-[250px]' />
                     <h3 className='text-2xl font-semibold py-7'>
                         Step 1
@@ -24,7 +24,7 @@ function GetStarted() {
                         Provide your name, email address to get started for free.
                     </p>
                 </div>
-                <div className='flex flex-col items-center justify-center w-1/3 border-r border-gray-800 p-7'>
+                <div className='flex flex-col items-center justify-center w-full lg:w-1/3 border-r border-gray-800 p-7'>
                     <img src="https://cdn.iconscout.com/icon/free/png-256/free-cloud-storage-2926993-2441074.png?f=webp" alt="" className='h-[250px]' />
                     <h3 className='text-2xl font-semibold py-7'>
                         Step 2
@@ -33,7 +33,7 @@ function GetStarted() {
                         Start storing and enjoy upto 20GB of free private cloud storage on us.
                     </p>
                 </div>
-                <div className='flex flex-col items-center justify-center w-1/3 p-7'>
+                <div className='flex flex-col items-center justify-center w-full lg:w-1/3 p-7'>
                     <img src="https://cdn-icons-png.flaticon.com/512/5387/5387743.png" alt="" className='h-[250px]' />
                     <h3 className='text-2xl font-semibold py-7'>
                         Step 3

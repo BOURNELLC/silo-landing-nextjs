@@ -2,8 +2,8 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='bg-zinc-700 text-white py-10'>
-            <div className='flex items-center gap-14 max-w-7xl mx-auto'>
+        <div className='bg-zinc-800 text-white py-10'>
+            <div className='flex flex-col lg:flex-row items-center gap-14 max-w-7xl mx-auto'>
                 <h3 className='text-2xl font-bold'>
                     Silo Network
                 </h3>
