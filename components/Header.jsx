@@ -66,7 +66,7 @@ function Header() {
                         Silo Network
                     </h3>
                 </div>
-                <div className="hidden lg:flex justify-center relative left-20">
+                <div className="hidden lg:flex justify-center relative left-20 z-50">
                     <div className='bg-[#060C18] w-[400px] px-14 py-2 rounded-full border border-sky-700 flex gap-5 fixed top-8'>
                         <Link href='/' className='hover:text-sky-500 transition duration-200'>
                             Home
@@ -74,7 +74,7 @@ function Header() {
                         <Link href='/' className='hover:text-sky-500 transition duration-200'>
                             Products
                         </Link>
-                        <Link href='/' className='hover:text-sky-500 transition duration-200'>
+                        <Link href='/pricing' className='hover:text-sky-500 transition duration-200'>
                             Pricing
                         </Link>
                         <Link href='/' className='hover:text-sky-500 transition duration-200'>
@@ -83,7 +83,9 @@ function Header() {
                     </div>
                 </div>
                 <div className='hidden lg:flex gap-2'>
-                    <button className='bg-white text-[#060C18] px-7 py-3 rounded-md'>Signup/Login</button>
+                    <Link href='/signup'>
+                        <button className='bg-white text-[#060C18] px-7 py-3 rounded-md'>Signup/Login</button>
+                    </Link>
                     <button className='bg-sky-500 text-white px-7 py-3 rounded-md'>Contact Sales</button>
                 </div>
             </div>
