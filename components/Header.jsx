@@ -24,7 +24,7 @@ function Header() {
                         </div>
                         <div className="drawer-side">
                             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                            <ul className="menu p-4 w-80 min-h-full bg-zinc-900 text-white">
+                            <div className="menu p-4 w-80 min-h-full bg-zinc-900 text-white text-center pt-10">
                                 {/* close button */}
                                 <div className='flex justify-end '>
                                     <label htmlFor="my-drawer" className="drawer-button">
@@ -34,17 +34,27 @@ function Header() {
                                     </label>
                                 </div>
                                 {/* Sidebar content here */}
-                                <li className='hover:bg-zinc-700 rounded-md'>
-                                    <a href="#" className="hover:text-gray-300 py-2 text-xl">Home</a>
-                                </li>
-                                <li className='hover:bg-zinc-700 rounded-md'>
-                                    <a href="#" className="hover:text-gray-300 py-2 text-xl">About</a>
-                                </li>
-                                <li className='hover:bg-zinc-700 rounded-md'>
-                                    <a href="#" className="hover:text-gray-300 py-2 text-xl">Contact</a>
-                                </li>
+                                <Link href='/' className='hover:bg-zinc-700 rounded-md'>
+                                    <h3 className="hover:text-gray-300 py-2 text-xl">Home</h3>
+                                </Link>
+                                <Link href='/' className='hover:bg-zinc-700 rounded-md'>
+                                    <h3 className="hover:text-gray-300 py-2 text-xl">Products</h3>
+                                </Link>
+                                <Link href='/pricing' className='hover:bg-zinc-700 rounded-md'>
+                                    <h3 className="hover:text-gray-300 py-2 text-xl">Pricing</h3>
+                                </Link>
+                                <Link href='/' className='hover:bg-zinc-700 rounded-md'>
+                                    <h3 className="hover:text-gray-300 py-2 text-xl">About</h3>
+                                </Link>
 
-                            </ul>
+                                <div className='flex flex-col gap-2 mt-7'>
+                                    <Link href='/signup'>
+                                        <button className='bg-white w-full text-[#060C18] px-7 py-3 rounded-md'>Signup/Login</button>
+                                    </Link>
+                                    <button className='bg-sky-500 w-full text-white px-7 py-3 rounded-md'>Contact Sales</button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 

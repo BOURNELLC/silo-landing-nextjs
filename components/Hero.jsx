@@ -1,8 +1,40 @@
-
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import ParticleBackground from './ParticleBackground'
+import { useRouter } from 'next/navigation'
+
 
 function Hero() {
+
+    const router = useRouter()
+
+    const [email, setEmail] = useState('')
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handleSendEmail = () => {
+
+        // validation
+        if (email === '') {
+            alert('Please enter your email address')
+            return
+        }
+
+        if (!email.includes('@')) {
+            alert('Please enter a valid email address')
+            return
+        }
+
+
+        // send email to the signup page
+        router.query = { email: email }
+        router.push('/signup')
+    }
+
+
+
     return (
         <div className='py-24'>
             <ParticleBackground />
@@ -31,8 +63,15 @@ function Hero() {
 
                         <div className="flex flex-col items-center justify-center pt-5 ">
                             <div className="flex flex-col lg:flex-row gap-2 items-center justify-center w-11/12 mx-auto lg:w-full">
-                                <input type="text" placeholder="Enter your email address" className="bg-[#060C18] w-full lg:w-[400px] px-5 py-3 rounded-md border border-sky-700 text-white" />
-                                <button className="w-full lg:w-[170px] transition duration-200 hover:bg-sky-500 bg-white hover:text-white text-black px-7 py-3 rounded-md">Get Started</button>
+                                <input
+                                    // validation
+
+                                    required
+                                    onChange={handleEmail}
+                                    type="email" placeholder="Enter your email address" className="bg-[#060C18] w-full lg:w-[400px] px-5 py-3 rounded-md border border-sky-700 text-white" />
+                                <button
+                                    onClick={handleSendEmail}
+                                    className="w-full lg:w-[170px] transition duration-200 hover:bg-sky-500 bg-white hover:text-white text-black px-7 py-3 rounded-md">Get Started</button>
                             </div>
                         </div>
                     </div>

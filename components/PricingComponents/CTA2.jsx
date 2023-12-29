@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function CTA2() {
@@ -13,8 +14,10 @@ function CTA2() {
                 </p>
 
                 <div className="flex flex-col lg:flex-row justify-center items-center mt-10 gap-5 pb-14">
-                    <button className="bg-white hover:bg-gray-400 transition duration-200 w-[250px] text-black px-10 py-3 rounded-md">Create a Free Account</button>
-                    <button className="bg-sky-500 hover:bg-gray-900 transition duration-200 hover:text-white w-[250px] text-white px-10 py-3 rounded-md">Contact Sales</button>
+                    <Link href='/signup'>
+                        <button className="bg-white hover:bg-gray-300 transition duration-200 w-[250px] text-black px-10 py-3 rounded-md">Create a Free Account</button>
+                    </Link>
+                    <button className="bg-sky-500 hover:bg-sky-700 transition duration-200 hover:text-white w-[250px] text-white px-10 py-3 rounded-md">Contact Sales</button>
 
                 </div>
             </section>

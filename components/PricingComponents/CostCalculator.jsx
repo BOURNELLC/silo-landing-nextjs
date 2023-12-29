@@ -49,7 +49,7 @@ function CostCalculator() {
         let SiloStorageCost = 8 * TB
 
         // Egress is free until the egress used exceeds 3 times the storage used, after which it is $10 per TB
-        let SiloEgressCost = Downloads > (TB * 3) ? (Downloads - (TB * 3)) * 0.01 : 0
+        let SiloEgressCost = Downloads > (TB * 3) ? (Downloads) * 10 : 0
 
 
 
