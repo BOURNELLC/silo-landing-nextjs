@@ -27,10 +27,9 @@ function Hero() {
             return
         }
 
+        router.push(`/signup/${email}`)
 
-        // send email to the signup page
-        router.query = { email: email }
-        router.push('/signup')
+
     }
 
 

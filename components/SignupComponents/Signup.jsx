@@ -1,17 +1,25 @@
 'use client'
 import React, { useState } from 'react'
 import Header from '../Header'
-import { useRouter } from 'next/navigation'
 
-function Signup({ params }) {
+
+function Signup({ email }) {
 
     const [personal, setPersonal] = useState(true)
     const [business, setBusiness] = useState(false)
 
-    // get email from the url query
-    const router = useRouter()
-    const { email } = router.query
+    // get email structured from email prop
+    if (email === undefined) {
+        email = ''
+    } else {
+        var emailStructured = email.replace(/%40/g, '@')
+    }
 
+
+
+
+
+    console.log(emailStructured)
 
     return (
         <div>
@@ -61,7 +69,7 @@ function Signup({ params }) {
                                     <div className='flex flex-col gap-2'>
                                         <label htmlFor="email">Email</label>
                                         <input
-                                            defaultValue={email}
+                                            defaultValue={emailStructured}
                                             type="email" name='email' id='email' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                                     </div>
                                     <div className='flex flex-col gap-2'>
@@ -105,7 +113,7 @@ function Signup({ params }) {
                                     <div className='flex flex-col gap-2'>
                                         <label htmlFor="email">Email</label>
                                         <input
-                                            defaultValue={email}
+                                            defaultValue={emailStructured}
                                             type="email" name='email' id='email' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                                     </div>
 

@@ -1,7 +1,15 @@
+'use client'
 import React from 'react'
 import Signup from '../../components/SignupComponents/Signup'
 
-function page() {
+function page({ params }) {
+
+    const email = params.signup
+
+    console.log(email)
+
+
+
     return (
         <div>
             <Signup />
