@@ -61,7 +61,7 @@ function Header() {
 
 
                     <div className=' w-[300px]'>
-                        <span className="font-bold text-xl">Silo Network</span>
+                        <img src="/Horizontal Logo.png" alt="" className=' h-10' />
                     </div>
                 </div>
 
@@ -71,10 +71,8 @@ function Header() {
 
 
 
-                <div>
-                    <h3 className='text-2xl font-bold hidden lg:block'>
-                        Silo Network
-                    </h3>
+                <div className='hidden lg:block'>
+                    <img src="/Horizontal Logo.png" alt="" className=' h-10' />
                 </div>
                 <div className="hidden lg:flex justify-center relative left-20 z-50">
                     <div className='bg-[#060C18] w-[400px] px-14 py-2 rounded-full border border-sky-700 flex gap-5 fixed top-8'>
