@@ -16,10 +16,19 @@ const verifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
 
         if (!user) {
             return (
-                <div>
-                    <h1>Invalid token</h1>
+                <div className='text-center py-20 bg-gray-900 text-white min-h-screen'>
+                    <div className="flex items-center justify-center gap-2 mb-3 pt-28">
+                        <h1 className='font-bold text-3xl'>No user found with such token!</h1>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-10 h-10">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                            </svg>
+
+
+                        </span>
+                    </div>
                     <p>
-                        The token you are using is invalid. Please try again.
+                        The token you are using is invalid. Please check your email again.
                     </p>
                 </div>
             );

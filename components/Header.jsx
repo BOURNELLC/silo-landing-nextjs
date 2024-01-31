@@ -43,7 +43,7 @@ function Header() {
                                 <Link href='/pricing' className='hover:bg-zinc-700 rounded-md'>
                                     <h3 className="hover:text-gray-300 py-2 text-xl">Pricing</h3>
                                 </Link>
-                                <Link href='/' className='hover:bg-zinc-700 rounded-md'>
+                                <Link href='/about' className='hover:bg-zinc-700 rounded-md'>
                                     <h3 className="hover:text-gray-300 py-2 text-xl">About</h3>
                                 </Link>
 
@@ -61,20 +61,24 @@ function Header() {
 
 
 
-                    <div className=' w-[300px]'>
+                    <Link href='/'>
+                        <div className=' w-[300px]'>
+                            <img src="/Horizontal Logo.png" alt="" className=' h-10' />
+                        </div>
+                    </Link>
+                </div>
+
+
+
+
+
+                <Link href='/'>
+                    <div className='hidden lg:block'>
                         <img src="/Horizontal Logo.png" alt="" className=' h-10' />
                     </div>
-                </div>
+                </Link>
 
 
-
-
-
-
-
-                <div className='hidden lg:block'>
-                    <img src="/Horizontal Logo.png" alt="" className=' h-10' />
-                </div>
                 <div className="hidden lg:flex justify-center relative left-20 z-50">
                     <div className='bg-[#060C18] w-[400px] px-14 py-2 rounded-full border border-sky-700 flex gap-5 fixed top-8'>
                         <Link href='/' className='hover:text-sky-500 transition duration-200'>
@@ -86,7 +90,7 @@ function Header() {
                         <Link href='/pricing' className='hover:text-sky-500 transition duration-200'>
                             Pricing
                         </Link>
-                        <Link href='/' className='hover:text-sky-500 transition duration-200'>
+                        <Link href='/about' className='hover:text-sky-500 transition duration-200'>
                             About
                         </Link>
                     </div>

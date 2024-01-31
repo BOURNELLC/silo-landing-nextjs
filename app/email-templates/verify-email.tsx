@@ -6,13 +6,13 @@ interface VerifyEmailTemplateProps {
 
 export const VerifyEmailTemplate: React.FC<Readonly<VerifyEmailTemplateProps>> = ({ emailVerificationToken }) => (
     <div>
-        <h1>Verify email</h1>
+        <h1>Email verification</h1>
         <p>
             Please verify your email address by clicking on the link below.
         </p>
         <p>
             <a href={`silo-landing-nextjs.vercel.app/auth/verify-email?token=${emailVerificationToken}`}>
-                Verify your email
+                Click here to verify your email
             </a>
         </p>
     </div>
