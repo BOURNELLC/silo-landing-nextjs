@@ -6,8 +6,6 @@ function page({ params }) {
 
     const email = params.signup
 
-    console.log(email)
-
 
 
     return (

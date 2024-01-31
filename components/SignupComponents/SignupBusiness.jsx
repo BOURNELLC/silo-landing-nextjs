@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import Header from '../Header'
 import { useForm } from "react-hook-form"
 import Swal from 'sweetalert2'
+import { sendEmail } from '@/app/actions/emails/sendEmail'
+import { EmailTemplate } from '@/app/email-templates/test-email'
 
 
 function SignupBusiness({ email }) {
@@ -11,6 +12,7 @@ function SignupBusiness({ email }) {
     const [loading, setLoading] = useState(false)
 
     const {
+        reset,
         register,
         formState: { errors },
         handleSubmit,
@@ -18,7 +20,7 @@ function SignupBusiness({ email }) {
     const onSubmitBusiness = (data) => {
         setLoading(true)
         // check password and confirm password match
-        if (data.password_b !== data.confirm_password_b) {
+        if (data.password !== data.confirm_password) {
             setLoading(false)
             Swal.fire({
                 icon: 'error',
@@ -29,7 +31,7 @@ function SignupBusiness({ email }) {
         }
 
         // if agree_tos is not checked
-        if (!data.agree_tos_b) {
+        if (!data.agree_tos) {
             setLoading(false)
             Swal.fire({
                 icon: 'error',
@@ -44,10 +46,10 @@ function SignupBusiness({ email }) {
         const newData = {
             ...data,
             // remove confirm_password from data
-            confirm_password_b: undefined
+            confirm_password: undefined
         }
 
-        fetch('/api/businessuser', {
+        fetch('/api/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,18 +60,28 @@ function SignupBusiness({ email }) {
             .then(data => {
                 console.log(data)
                 if (data.success) {
-                    setLoading(false)
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: 'You have successfully signed up!',
+                    // clear form
+                    reset()
+                    // SEND EMAIL
+                    sendEmail({
+                        from: 'Silo <silo@metrocoder.com>',
+                        to: 'sau.shahriar@gmail.com',
+                        subject: 'Welcome to the team!',
+                        react: EmailTemplate({ firstName: newData.name.split(' ')[0] })
                     })
+                    setLoading(false)
+                    // Success alert
+                    Swal.fire({
+                        title: "Email verification is required!",
+                        text: "We have sent you an email with a link to verify your account.",
+                        icon: "success",
+                    });
                 } else {
                     setLoading(false)
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Something went wrong!',
+                        text: 'Email already exists!',
                     })
                 }
             })
@@ -90,19 +102,19 @@ function SignupBusiness({ email }) {
             <form onSubmit={handleSubmit(onSubmitBusiness)} className='mt-5'>
                 <div className='flex flex-col gap-5'>
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="name_b">Name</label>
+                        <label htmlFor="name">Name</label>
                         <input
-                            {...register("name_b", { required: true })}
-                            aria-invalid={errors.name_b ? "true" : "false"}
-                            type="text" name='name_b' id='name_b' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
+                            {...register("name", { required: true })}
+                            aria-invalid={errors.name ? "true" : "false"}
+                            type="text" name='name' id='name' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="email_b">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input
-                            {...register("email_b", { required: true })}
-                            aria-invalid={errors.email_b ? "true" : "false"}
+                            {...register("email", { required: true })}
+                            aria-invalid={errors.email ? "true" : "false"}
                             defaultValue={emailStructured}
-                            type="email" name='email_b' id='email_b' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
+                            type="email" name='email' id='email' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                     </div>
 
                     {/* company name, Position, Employees, Storage needs */}
@@ -149,18 +161,18 @@ function SignupBusiness({ email }) {
                     </div>
 
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="password_b">Password</label>
+                        <label htmlFor="password">Password</label>
                         <input
-                            {...register("password_b", { required: true })}
-                            aria-invalid={errors.password_b ? "true" : "false"}
-                            type="password" name='password_b' id='password_b' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
+                            {...register("password", { required: true })}
+                            aria-invalid={errors.password ? "true" : "false"}
+                            type="password" name='password' id='password' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="confirm_password_b">Confirm Password</label>
+                        <label htmlFor="confirm_password">Confirm Password</label>
                         <input
-                            {...register("confirm_password_b", { required: true })}
-                            aria-invalid={errors.confirm_password_b ? "true" : "false"}
-                            type="password" name='confirm_password_b' id='confirm_password_b' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
+                            {...register("confirm_password", { required: true })}
+                            aria-invalid={errors.confirm_password ? "true" : "false"}
+                            type="password" name='confirm_password' id='confirm_password' className='bg-[#060C18] border border-gray-300 rounded-md px-5 py-3' />
                     </div>
 
                     {/* Contact sales checkbox*/}
@@ -174,9 +186,9 @@ function SignupBusiness({ email }) {
                     {/* i agree checkbox */}
                     <div className='flex items-center gap-2 pb-4'>
                         <input
-                            {...register("agree_tos_b", { required: false })}
-                            type="checkbox" name='agree_tos_b' id='agree_tos_b' className='checkbox checkbox-info' />
-                        <label htmlFor="agree_tos_b">I agree to the <span className='text-sky-500 underline cursor-pointer'>Terms of Service</span> and <span className='text-sky-500  underline cursor-pointer'>Privacy Policy</span></label>
+                            {...register("agree_tos", { required: false })}
+                            type="checkbox" name='agree_tos' id='agree_tos' className='checkbox checkbox-info' />
+                        <label htmlFor="agree_tos">I agree to the <span className='text-sky-500 underline cursor-pointer'>Terms of Service</span> and <span className='text-sky-500  underline cursor-pointer'>Privacy Policy</span></label>
                     </div>
                     <button
                         type='submit'

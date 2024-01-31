@@ -1,8 +1,10 @@
 'use client'
 import React, { useState } from 'react'
-import Header from '../Header'
 import { useForm } from "react-hook-form"
 import Swal from 'sweetalert2'
+import { sendEmail } from '@/app/actions/emails/sendEmail'
+import crypto from 'crypto'
+import { VerifyEmailTemplate } from '@/app/email-templates/verify-email';
 
 
 function SignupPersonal({ email }) {
@@ -12,6 +14,7 @@ function SignupPersonal({ email }) {
 
 
     const {
+        reset,
         register,
         formState: { errors },
         handleSubmit,
@@ -49,7 +52,11 @@ function SignupPersonal({ email }) {
             confirm_password: undefined
         }
 
-        fetch('/api/personaluser', {
+
+
+
+
+        fetch('/api/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -61,23 +68,61 @@ function SignupPersonal({ email }) {
             .then(data => {
                 console.log(data)
                 if (data.success) {
+                    // clear form
+                    reset()
+
+                    // Generate verification token
+                    const verificationToken = crypto.randomBytes(20).toString('hex')
+                    const userId = data.data.id
+
+                    // Add verification token to user
+                    fetch('/api/user', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: userId,
+                            emailVerificationToken: verificationToken
+                        })
+                    }).then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
+                                console.log(data)
+                                const email = data.data.email
+                                const emailVerificationToken = data.data.emailVerificationToken
+
+                                // SEND EMAIL
+                                sendEmail({
+                                    from: 'Silo <silo@metrocoder.com>',
+                                    to: [email],
+                                    subject: 'Verify your email address',
+                                    react: VerifyEmailTemplate({ emailVerificationToken })
+                                })
+
+                                return "Sucessfully added verification token to user"
+
+                            } else {
+                                console.log('Error adding verification token to user')
+                            }
+                        })
+
                     setLoading(false)
+                    // Success alert
                     Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: 'You have successfully signed up!',
-                    })
+                        title: "Please verify your email!",
+                        text: "We have sent you an email with a verification link. Please verify your email to continue.",
+                        icon: "success",
+                    });
                 } else {
                     setLoading(false)
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Something went wrong!',
+                        text: 'Email already exists!',
                     })
                 }
             })
-
-
     }
 
     // get email structured from email prop

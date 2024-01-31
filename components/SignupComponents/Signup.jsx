@@ -14,10 +14,6 @@ function Signup({ email }) {
 
 
 
-
-
-
-
     return (
         <div>
             <div className='bg-[#060C18]'>
@@ -64,19 +60,6 @@ function Signup({ email }) {
                         <div className={business ? 'block' : 'hidden'}>
                             <SignupBusiness email={email} />
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     </div>
                 </div>

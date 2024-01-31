@@ -60,6 +60,7 @@ function Header() {
 
 
 
+
                     <div className=' w-[300px]'>
                         <img src="/Horizontal Logo.png" alt="" className=' h-10' />
                     </div>
