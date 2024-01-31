@@ -72,7 +72,7 @@ function SignupPersonal({ email }) {
                     reset()
 
                     // Generate verification token
-                    const verificationToken = crypto.randomBytes(32).toString("base64url");
+                    const verificationToken = crypto.randomBytes(20).toString('hex')
                     const userId = data.data.id
 
                     // Add verification token to user

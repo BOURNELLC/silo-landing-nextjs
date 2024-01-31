@@ -22,7 +22,7 @@ model User {
   name                   String
   password               String
   emailVerified          Boolean  @default(false)
-  emailVerificationToken String?
+  emailVerificationToken String?  @unique
   createdAt              DateTime @default(now())
   updatedAt              DateTime @updatedAt
 }
