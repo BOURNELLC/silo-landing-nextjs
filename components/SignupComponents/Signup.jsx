@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Header from '../Header'
 import SignupPersonal from './SignupPersonal'
 import SignupBusiness from './SignupBusiness'
+import Footer from '../Footer'
 
 
 
@@ -64,6 +65,7 @@ function Signup({ email }) {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
