@@ -1,22 +1,26 @@
 import React from 'react'
+import Link from 'next/link'
 
 function Footer() {
     return (
         <div className='bg-zinc-800 text-white pt-10'>
             <div className='flex flex-col lg:flex-row items-center gap-14 max-w-7xl mx-auto'>
-                <h3 className='text-2xl font-bold'>
-                    Silo Network
-                </h3>
-                <div className="flex gap-5">
-                    <h3>
-                        Home
-                    </h3>
-                    <h3>
-                        About
-                    </h3>
-                    <h3>
-                        Contact
-                    </h3>
+                <div className="flex justify-center lg:justify-start">
+                    <img src="/Horizontal Logo.png" alt="" className=' h-10' />
+                </div>
+                <div className="flex gap-5 font-thin text-base">
+                    <Link href='/' className=''>
+                        <h3 className="hover:text-sky-300 transition duration-200 py-2">Home</h3>
+                    </Link>
+                    <Link href='/' className=''>
+                        <h3 className="hover:text-sky-300 transition duration-200 py-2">Products</h3>
+                    </Link>
+                    <Link href='/pricing' className=''>
+                        <h3 className="hover:text-sky-300 transition duration-200 py-2">Pricing</h3>
+                    </Link>
+                    <Link href='/about' className=''>
+                        <h3 className="hover:text-sky-300 transition duration-200 py-2">About</h3>
+                    </Link>
                 </div>
             </div>
             <div className="flex lg:justify-end pt-5 lg:pt-0 pb-3 justify-center">
