@@ -29,7 +29,7 @@ function Signup({ email }) {
                         </div>
                         <h3 className='text-2xl lg:text-3xl font-bold'>Experience better cloud storage for your business.</h3>
                         <p className='text-gray-300 mt-5 w-2/3 lg:w-full mx-auto lg:pr-10 font-light'>
-                            Start for free and get unparalleled performance and security, while shaving a zero of your cloud bill and carbon footprint.
+                            Start for free and get unparalleled performance and security for a fraction of the industry standard.
                         </p>
                     </div>
                     <div className='w-full lg:w-[55%] text-center lg:text-left bg-white bg-opacity-5 p-5 lg:p-10 rounded-lg'>

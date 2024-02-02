@@ -30,7 +30,7 @@ function GetStarted() {
                         Step 2
                     </h3>
                     <p className='text-center'>
-                        Start storing and enjoy upto 20GB of free private cloud storage on us.
+                        Start storing and enjoy up to 20GB of free private cloud storage on us.
                     </p>
                 </div>
                 <div className='flex flex-col items-center justify-center w-full lg:w-1/3 p-7'>
@@ -39,7 +39,7 @@ function GetStarted() {
                         Step 3
                     </h3>
                     <p className='text-center'>
-                        Upgrade to unlimited for access to unlimited storage space and pay for only what you use.
+                        Upgrade to unlimited for unthrottled storage space on a pay-as-you-go basis.
                     </p>
                 </div>
             </div>

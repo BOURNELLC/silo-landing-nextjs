@@ -89,7 +89,7 @@ function CostCalculator() {
                     Cloud Storage Cost and Savings Calculator
                 </h2>
                 <p className='text-left text-sm'>
-                    Compare how $6/TB/month stacks up. <br />
+                    Compare how $8/TB/month stacks up. <br />
                     Isn't math fun when it reveals how your budget could work harder?
                 </p>
 
