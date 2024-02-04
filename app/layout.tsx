@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Silo Network',
-  description: 'Developed by metroCoder',
+  description: 'Decentralized Cloud Storage Network',
 }
 
 export default function RootLayout({
