@@ -94,7 +94,7 @@ function SignupPersonal({ email }) {
 
                                 // SEND EMAIL
                                 sendEmail({
-                                    from: 'Silo <silo@metrocoder.com>',
+                                    from: 'Silo <admin@silo.network>',
                                     to: [email],
                                     subject: 'Verify your email address',
                                     react: VerifyEmailTemplate({ emailVerificationToken })
