@@ -49,7 +49,7 @@ const verifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
             <div className='text-center py-20 bg-gray-900 text-white min-h-screen'>
                 <div className="flex items-center justify-center gap-2 mb-3 pt-28">
                     <h1 className='font-bold text-3xl'>
-                        Email verified successfully
+                        Thanks for registering! Your email has been verified.
                     </h1>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="aqua" className="w-10 h-10">
@@ -59,7 +59,14 @@ const verifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
                     </span>
                 </div>
                 <p>
-                    Your email has been verified. You can close this page.
+                    Regretfully, Silo Network is undergoing new development and is currently <u>invite-only</u>. We apologize for the inconvenience.
+                </p>
+                <p>
+                    Our aim is to bring forth a new standard for the way personal data is stored on the internet at the lowest price.
+                </p>
+                <p>
+                    The new Silo portal is opening soon! <u>Your spot on the waitlist is reserved</u> and you will be notified via Email as soon as space opens.
+                    Thank you for your patience.
                 </p>
             </div>
         );
